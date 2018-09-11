@@ -47,12 +47,24 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class=field >
+    <%= f.check_box :registration_check %>
+    <%= f.label :registration_check %>
+  </div>
+
   <div class="actions">
     <%= f.submit '次へ' %>
 <!--     <button class="submit" data-action="users #users/:id/addresses/new #addresses#new"> 次へ </button> -->
   </div>
-<% end %>
 
 <%#= render "users/shared/links" %>
 
+
+<% end %>
+
 </div>
+
+<!-- <div class="field text-left"> -->
+  <%#= f.check_box :accepted ,{},checked_value = "true",unchecked_value = "false" %>
+  <%#= f.label '利用規約、及び、個人情報の取扱に同意する' %>
+<!-- </div> -->

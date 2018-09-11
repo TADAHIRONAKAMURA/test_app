@@ -3,6 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   	devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
   	
+  	# Rails Devise で DB カラムに依存しない項目を追加する acceptance
+  	validates :registration_check, acceptance: true, on: :create
+  	
 	has_many :fishing_reports	
 	has_many :favorites,	dependent: :destroy
 	has_many :reviews,	dependent: :destroy
