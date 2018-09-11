@@ -1,0 +1,27 @@
+<!-- もしログインしているユーザーが別のユーザーをフォローしているならunfolowへ、もしフォローしていないならフォローへ。 -->
+<%#= form_for(current_user.active_relationships.build) do |f| %>
+  <!-- <div><%#= hidden_field_tag :following_id, @user.id %></div> -->
+  <%#= f.submit "Follow", class: "btn btn-primary" %>
+<%# end %>
+
+<% unless forf.empty? %>
+	<h2><%= "#{a}の#{b}" %></h2>
+	<table>
+		<thead></thead>
+		<tbody>
+			<tr>
+				<th>ユーザーID</th><th>ユーザーNAME</th>
+			</tr>
+			<% forf.each do |user| %>
+				<tr>
+					<td>
+						<%= user.id %>
+					</td>
+					<td>
+						<%= user.nickname %>
+					</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+<% end %>
